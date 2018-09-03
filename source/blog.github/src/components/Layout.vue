@@ -51,7 +51,8 @@ export default {
   }
 };
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
+@import (reference) "../less/variable.less";
 .top-bg{
     background-color: #00000047;
 }
