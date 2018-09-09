@@ -5,6 +5,7 @@ function _import(component) {
 }
 const Home = _import("Home");
 const Layout = _import("Layout");
+const Map = _import("Map");
 
 Vue.use(Router);
 
@@ -22,6 +23,9 @@ export default new Router({
           component:Home
         }
       ]
+    },{
+        path:'/map',
+      component: Map,
     }
   ]
 });
