@@ -2,10 +2,10 @@
   <div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-6 col-xl-4">
+        <div class="order-sm-1 order-2 col-sm-6 col-12 col-xl-4">
           <div class="tools">
-            <div class="d-flex p-2">
-              <span>学历：</span>
+            <div class="d-sm-flex p-2">
+              <span class="mb-sm-0 mb-1 d-sm-inline d-block">学历：</span>
               <el-checkbox-group v-model="checkedEdu" @change="filterChange">
                 <el-checkbox v-for="edu in eduBox" :label="edu" :key="edu">{{edu}}</el-checkbox>
               </el-checkbox-group>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-xl-8">
+        <div class="order-sm-2 order-1 col-sm-6 col-12 col-xl-8">
           <div class="map-data">
             <el-amap vid="amapDemo" :zoom="zoom" :center="center" class="amap-demo">
               <!-- <el-amap-search-box class="search-box"></el-amap-search-box> -->
@@ -124,6 +124,14 @@ export default {
   created() {
     this.originMarkers = mapData;
     this.markers = mapData.map(this.mapResult);
+    if (window.document.documentElement.clientWidth < 576) {
+      this.$notify({
+        title: "提示",
+        message: "移动端体验受限",
+        type: "warning",
+        duration: 5000
+      });
+    }
   },
   methods: {
     mapResult(item) {
@@ -286,8 +294,12 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+@import (reference) "../less/variable.less";
 .tools {
   height: 100vh;
+  @media @pdasm {
+    height: auto;
+  }
   width: 100%;
   & > div > span {
     min-width: 150px;
@@ -296,6 +308,9 @@ export default {
 .map-data {
   width: 100%;
   height: 100vh;
+  @media @pdasm {
+    height: 50vh;
+  }
 }
 .search-box {
   position: absolute;
