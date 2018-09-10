@@ -1,6 +1,5 @@
 .DS_Store
 /source/blog.github/node_modules/
-/source/blog.github/dist/
 *npm-debug.log*
 *yarn-debug.log*
 *yarn-error.log*

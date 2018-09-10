@@ -76,17 +76,3 @@ export default {
     font-size: 30px;
 }
 </style>
-<style>
-body,
-html {
-  height: 100%;
-}
-/* body {
-  background-image: url(/static/img/home-bg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-</style>
-
-
