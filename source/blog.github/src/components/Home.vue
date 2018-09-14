@@ -1,6 +1,13 @@
 <template>
   <div class="home">
-      <!-- <iframe src="https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=10" height="50px" width="50px" id="bing-data" /> -->
+    <div class="text-light text-center pt-5">
+      <h3>没有什么拿出来招待大家 大家就先欣赏 萨克斯 吧</h3>
+    </div>
+    <div class="d-flex">
+      <audio controls class="pt-2 m-auto">
+        <source src="/static/goinghome.mp3" type="audio/mp3"> Your browser does not support the audio element.
+      </audio>
+    </div>
   </div>
 </template>
 
@@ -9,7 +16,7 @@ export default {
   data() {
     return {};
   },
-  created(){
+  created() {
     // var bingData = document.querySelector('#bing-data');
     // console.log(bingData);
     // this.axios({
