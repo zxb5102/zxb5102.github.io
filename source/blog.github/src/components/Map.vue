@@ -10,13 +10,13 @@
                 <el-checkbox v-for="edu in eduBox" :label="edu" :key="edu">{{edu}}</el-checkbox>
               </el-checkbox-group>
             </div>
-            <div class="d-flex p-2">
+            <!-- <div class="d-flex p-2">
               <span>历史数据：</span>
               <el-select v-model="selectDate" placeholder="请选择" size="mini" @change="selectChange">
                 <el-option v-for="item in historyDate" :key="item" :label="item" :value="item">
                 </el-option>
               </el-select>
-            </div>
+            </div> -->
             <div class="d-flex p-2">
               <span>月薪：</span>
               <el-input-number v-model="salary" :min="-1" size="mini" @change="filterChange"></el-input-number>
@@ -69,14 +69,15 @@
   </div>
 </template>
 <script>
-import data0910 from "./data/2018-09-10.json";
-import data0914 from "./data/2018-09-14.json";
+// import data0910 from "./data/2018-09-10.json";
+// import data0914 from "./data/2018-09-14.json";
+import data0930 from "./data/2018-09-30.json";
 
 export default {
   data() {
     return {
-      selectDate: "2018-09-14",
-      historyDate: ["2018-09-14", "2018-09-10"],
+      // selectDate: "2018-09-14",
+      // historyDate: ["2018-09-14", "2018-09-10"],
       eduBox: ["本科", "大专", "不限", "硕士"],
       checkedEdu: ["本科", "大专", "不限", "硕士"],
       resp: "",
@@ -133,8 +134,8 @@ export default {
     };
   },
   created() {
-    this.originMarkers = data0910;
-    this.markers = data0910.map(this.mapResult);
+    this.originMarkers = data0930;
+    this.markers = data0930.map(this.mapResult);
     if (window.document.documentElement.clientWidth < 576) {
       this.$notify({
         title: "提示",
@@ -145,17 +146,17 @@ export default {
     }
   },
   methods: {
-    selectChange(value) {
-      switch (value) {
-        case "2018-09-14":
-          this.originMarkers = data0914;
-          break;
-        case "2018-09-10":
-          this.originMarkers = data0910;
-          break;
-      }
-      this.filterChange();
-    },
+    // selectChange(value) {
+    //   switch (value) {
+    //     case "2018-09-14":
+    //       this.originMarkers = data0914;
+    //       break;
+    //     case "2018-09-10":
+    //       this.originMarkers = data0910;
+    //       break;
+    //   }
+    //   this.filterChange();
+    // },
     mapResult(item) {
       var { geo: { lat, lon } } = item;
       return {

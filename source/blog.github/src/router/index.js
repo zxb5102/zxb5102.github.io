@@ -15,7 +15,7 @@ export default new Router({
       path: "/home",
       alias:'/',
       component: Layout,
-      redirect: "/home/main",
+      redirect: "/home/map",
       children: [
         {
           path: "main",
