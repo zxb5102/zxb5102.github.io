@@ -11,26 +11,27 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: "/home",
-      alias:'/',
-      component: Layout,
-      redirect: "/home/map",
-      children: [
-        {
-          path: "main",
-          name:'main',
-          component:Home
-        }
-      ]
-    },
+    // {
+    //   path: "/home",
+    //   alias:'/',
+    //   component: Layout,
+    //   redirect: "/map",
+    //   children: [
+    //     {
+    //       path: "main",
+    //       name:'main',
+    //       component:Home
+    //     }
+    //   ]
+    // },
     // {
     //   path: '/',
     //   redirect: '/map'
     // },
     {
-      path: '/map',
-      component: Map,
+      alias: "/",
+      path: "/map",
+      component: Map
     }
   ]
 });
