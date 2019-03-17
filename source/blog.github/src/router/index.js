@@ -6,6 +6,7 @@ function _import(component) {
 const Home = _import("Home");
 const Layout = _import("Layout");
 const Map = _import("Map");
+const User = _import("User")
 
 Vue.use(Router);
 
@@ -30,8 +31,8 @@ export default new Router({
     // },
     {
       alias: "/",
-      path: "/map",
-      component: Map
+      path: "/user",
+      component:User 
     }
   ]
 });
