@@ -13,10 +13,12 @@
 
     <script>
         function foo() {
+            console.log('网页发送消息');
             wx.miniProgram.postMessage({ data: 'foo' })
         }
 
         function getEnv() {
+            console.log('网页获取环境');
             wx.miniProgram.getEnv(function (res) { console.log(res) })
         }
     </script>
